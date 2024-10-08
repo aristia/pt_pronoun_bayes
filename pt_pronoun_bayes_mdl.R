@@ -1,6 +1,8 @@
 library(readxl)
 
-df <- read_excel("C:/Users/jaris/Documents/PT_Bayes_Model/quest_EP_BP_pronouns.xlsx")
+df <- read_excel("quest_EP_BP_pronouns.xlsx")
+
+df$response <- ifelse (df$answer == 0, "object", "subject" )
 
 prob_m_c <- function (subj, obj) { 
  subject = subj/100
